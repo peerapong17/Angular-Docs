@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
+
+.container {
+  margin: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.code-box {
+    display: inline;
+    background: rgb(187, 187, 187);
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+
+h2 {
+    margin-top: 40px;
+}

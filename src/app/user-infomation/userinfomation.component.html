@@ -1,0 +1,11 @@
+<div class="container">
+  <div *ngIf="userData; else elseBlock">
+    <h1>Name: {{ userData.name }}</h1>
+    <h3>Email: {{ userData.email }}</h3>
+    <h3>Phone: {{ userData.phone }}</h3>
+    <h3>Company: {{ userData.company.name }}</h3>
+    <button (click)="onBack()">Back</button>
+  </div>
+  <ng-template #elseBlock>Loading...</ng-template>
+  
+</div>

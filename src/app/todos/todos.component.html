@@ -1,0 +1,12 @@
+<div>
+    <form (ngSubmit)="onAdd(task.value)">
+        <input type="text" placeholder="Enter Todo..." #task>
+        <input type="submit" value="add todo">
+    </form>
+  <ul>
+    <li *ngFor="let todo of todos; let i = index;">
+      <h2>{{i + 1}}. {{ todo.task }}</h2>
+      <button (click)="onDelete(i)">Remove</button>
+    </li>
+  </ul>
+</div>

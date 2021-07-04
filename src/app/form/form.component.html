@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="code-container">
+    <h2>To use form in angular. you should import FormModule</h2>
+    <div class="code-box">import {{ '{' }} FormsModule {{ '}' }} from '@angular/forms';</div>
+    <p>and then add FormModule into @ngModel imports</p>
+  </div>
+  <form class="form-container">
+    <label for="name">Name:</label>
+    <input
+      type="text"
+      id="name"
+      autocomplete="off"
+      autofocus
+      [(ngModel)]="name"
+      name="name"
+    /><br /><br />
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      autocomplete="off"
+      [(ngModel)]="email"
+      name="email"
+    /><br /><br />
+    <label for="email">Status:</label><br /><br />
+    <input
+      type="radio"
+      id="Student"
+      name="fav_language"
+      value="Student"
+      [(ngModel)]="status"
+    />
+    <label for="Student">Student</label><br />
+    <input
+      type="radio"
+      id="Collegian"
+      name="fav_language"
+      value="Collegian"
+      [(ngModel)]="status"
+    />
+    <label for="Collegian">Collegian</label><br />
+    <input
+      type="radio"
+      id="Worker"
+      name="fav_language"
+      value="Worker"
+      [(ngModel)]="status"
+    />
+    <label for="Worker">Worker</label><br />
+    <input
+      type="radio"
+      id="Unemployed"
+      name="fav_language"
+      value="Unemployed"
+      [(ngModel)]="status"
+    />
+    <label for="Unemployed">Unemployed</label><br />
+    <input
+      type="radio"
+      id="Retirement"
+      name="fav_language"
+      value="Retirement"
+      [(ngModel)]="status"
+    />
+    <label for="Retirement">Retirement</label><br /><br />
+    <button (click)="onSubmit()">Submit</button>
+  </form>
+</div>
