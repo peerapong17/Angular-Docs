@@ -1,0 +1,25 @@
+<div class="container">
+  <app-navbar-section class="navbar-container">
+    <div>
+      <a routerLink="/api" routerLinkActive="active">Home</a>
+    </div>
+    <div>
+      <a routerLink="/api/example">Example</a>
+    </div>
+  </app-navbar-section>
+  <h1>API section</h1>
+  <p>When you need to work with API request in angular, first thing first you need to import HttpClientModule</p>
+  <div class="code-box">import {{ '{' }} HttpClientModule {{ '}' }} from '@angular/common/http'</div>
+  <div class="sizedBox"></div>
+  <p>and in the services you need to import HttpClient</p>
+  <div class="code-box">import {{ "{" }} HttpClient {{ '}' }} from '@angular/common/http';</div>
+  <div class="sizedBox"></div>
+  <p>ang injected into constructor</p>
+  <div class="code-box">constructor(private http: HttpClient)</div>
+  <div class="sizedBox"></div>
+  <p>The example</p>
+  <div class="code-box">fetchUser() {{ '{' }}
+    return this.http.get('https://jsonplaceholder.typicode.com/users')
+  {{ '}'}}</div>
+  
+</div>

@@ -1,0 +1,33 @@
+.container {
+  margin: 30px;
+  font-family: "Roboto", sans-serif;
+}
+
+div a {
+  margin: 0 20px 0 -7px;
+  text-decoration: none;
+  color: rgb(40, 40, 40);
+  font-size: 30px;
+  padding: 7px;
+  border-radius: 7px;
+}
+
+div a:hover {
+  background: rgb(192, 235, 236);
+}
+
+p {
+    font-size: 20px;
+}
+
+.code-box {
+    display: inline;
+    background: rgb(187, 187, 187);
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+
+.sizedBox {
+  height: 30px;
+}

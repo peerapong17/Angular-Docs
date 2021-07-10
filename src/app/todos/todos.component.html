@@ -1,6 +1,6 @@
-<div>
-    <form (ngSubmit)="onAdd(task.value)">
-        <input type="text" placeholder="Enter Todo..." #task>
+<div class="container">
+    <form (ngSubmit)="onAdd()">
+        <input type="text" placeholder="Enter Todo..." [(ngModel)]="task" name="task" autocomplete="off" autofocus>
         <input type="submit" value="add todo">
     </form>
   <ul>

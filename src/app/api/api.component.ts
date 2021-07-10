@@ -1,7 +1,6 @@
-import { DataService } from './../data.service';
-import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Data} from '../Data'
+import { Component, OnInit } from '@angular/core';
+import { APIService, userResponse } from '../services/api.service';
 
 @Component({
   selector: 'app-api',
@@ -9,18 +8,12 @@ import {Data} from '../Data'
   styleUrls: ['./api.component.css'],
 })
 export class APIComponent implements OnInit {
+  users: userResponse[] = [];
 
-  users:any
-
-  constructor(public data: DataService, private http: HttpClient) {
-    http.get('https://jsonplaceholder.typicode.com/users').subscribe(
-      (data) => {
-        this.users = data
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+  constructor(private apiService: APIService) {
+    this.apiService.fetchUser().subscribe((data) => {
+      this.users = data
+    });
   }
 
   ngOnInit(): void {}

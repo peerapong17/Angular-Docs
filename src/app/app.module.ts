@@ -11,6 +11,9 @@ import { RouterComponent } from './router/router.component';
 import { APIComponent } from './api/api.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserinfomationComponent } from './user-infomation/userinfomation.component';
+import { NavbarSectionComponent } from './navbar-section/navbar-section.component';
+import { ApiHomeComponent } from './api-home/api-home.component';
+
 
 const routes: Routes = [
   {
@@ -31,6 +34,10 @@ const routes: Routes = [
   },
   {
     path: 'api',
+    component: ApiHomeComponent,
+  },
+  {
+    path: 'api/example',
     component: APIComponent,
   },
   {
@@ -49,6 +56,8 @@ const routes: Routes = [
     RouterComponent,
     APIComponent,
     UserinfomationComponent,
+    NavbarSectionComponent,
+    ApiHomeComponent
   ],
   imports: [
     BrowserModule,

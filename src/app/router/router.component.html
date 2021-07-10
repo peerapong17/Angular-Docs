@@ -1,6 +1,18 @@
 <div class="container">
     <h1>Router</h1>
-    <h3>To use router in angular. First of all you should import routes and routermodule</h3>
+    <p>To use router in angular. First of all you should import routes and routermodule</p>
     <div class="code-box">import {{"{"}} Routes, RouterModule {{"}"}} from '@angular/router';</div>
-    <h3>and create whatever path you want</h3>
+    <p>and create whatever path you want</p>
+    <div class="sizedBox"></div>
+    <p>and if you want to use router to push user to another page or get parameter from url</p>
+    <div class="code-box">import {{ '{' }} ActivatedRoute,Router {{ '}' }} from '@angular/router';</div>
+    <div class="sizedBox"></div>
+    <p>and injected into constructor</p>
+    <div class="code-box">constructor(private route: ActivatedRoute, private router: Router)</div>
+    <div class="sizedBox"></div>
+    <p>The example of using ActivatedRoute</p>
+    <div class="code-box">let id = route.snapshot.params['id']</div>
+    <div class="sizedBox"></div>
+    <p>The example of using Router</p>
+    <div class="code-box">this.router.navigateByUrl('/')</div>
 </div>

@@ -7,6 +7,7 @@ import { Todo } from '../type';
   styleUrls: ['./todos.component.css'],
 })
 export class TodosComponent implements OnInit {
+  task: string = ''
   todos: Todo[] = [];
 
   constructor() {}
@@ -34,10 +35,12 @@ export class TodosComponent implements OnInit {
     });
   }
 
-  onAdd(task:string): void {
+  onAdd(): void {
     this.todos.push({
-      task: task,
+      task: this.task,
       isCompleted: false
     })
+
+    this.task = ''
   }
 }

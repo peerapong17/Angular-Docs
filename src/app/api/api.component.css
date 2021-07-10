@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
 
 .container {
-  margin: 20px;
+  margin: 30px;
   font-family: "Roboto", sans-serif;
 }
 
 h1 {
-    color: rgb(31, 31, 31);
+    color: rgb(40, 40, 40);
 }
 
 ul {
@@ -30,4 +30,17 @@ li a {
 li:hover {
   border-left: 5px solid rgb(127, 77, 163);
   cursor: pointer;
+}
+
+div a {
+  margin: 0 20px 0 -7px;
+  text-decoration: none;
+  color: rgb(40, 40, 40);
+  font-size: 30px;
+  padding: 7px;
+  border-radius: 7px;
+}
+
+div a:hover {
+  background: rgb(192, 235, 236);
 }

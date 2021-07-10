@@ -1,8 +1,17 @@
 <div class="container">
+  <app-navbar-section class="navbar-container">
+    <div>
+      <a routerLink="/api" routerLinkActive="active">Home</a>
+    </div>
+    <div>
+      <a routerLink="/api/example">Example</a>
+    </div>
+  </app-navbar-section>
+
   <h1>List of Users</h1>
   <ul>
     <li *ngFor="let user of users">
-      <a routerLink="/user/{{user.id}}">{{ user.name }}</a>
+      <a routerLink="/user/{{ user.id }}">{{ user.name }}</a>
     </li>
   </ul>
 </div>

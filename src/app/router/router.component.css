@@ -12,3 +12,11 @@
     letter-spacing: 1px;
     border-radius: 5px;
 }
+
+p {
+    font-size: 20px;
+}
+
+.sizedBox {
+    height: 20px;
+} 
