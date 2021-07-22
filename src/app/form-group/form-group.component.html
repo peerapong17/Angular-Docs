@@ -1,0 +1,41 @@
+<div class="container">
+    <app-navbar-section class="navbar-container">
+        <div>
+            <a routerLink="/form" routerLinkActive="active">Home</a>
+        </div>
+        <div>
+            <a routerLink="/formgroup">FormGroup</a>
+        </div>
+    </app-navbar-section>
+    <div class="code-container">
+        <h2>To use form group in angular. you should import this</h2>
+        <div class="code-box">
+            import {{ "{" }} FormGroup, FormControl {{ "}" }} from '@angular/forms'
+        </div>
+    </div>
+    <div>
+        <form [formGroup]="profileForm">
+            <div class="form-control">
+                <label for="username">Username</label>
+                <input [ngClass]="{invalid: isUsernameEmpty}" [ngClass]="{invalid: username.dirty && username.touched && username.errors}" autocomplete="off" id="username" type="text" name="username" formControlName="username" />
+                <ng-container *ngIf="username.dirty && username.touched && username.errors">
+                    <span *ngIf="username.errors.pattern" class="error-message">Email is not valid</span>
+                </ng-container>
+                <ng-container *ngIf="isUsernameEmpty && username.errors">
+                    <span *ngIf="username.errors.required" class="error-message">Username is required</span>
+                </ng-container>
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input [ngClass]="{invalid: isPasswordEmpty}" [ngClass]="{invalid: password.dirty && password.touched && password.errors}" autocomplete="off" id="password" type="text" name="password" formControlName="password" />
+                <ng-container *ngIf="password.dirty && password.touched && password.errors">
+                    <span *ngIf="password.errors.minlength" class="error-message">Password should be at least 6 characters</span>
+                </ng-container>
+                <ng-container *ngIf="isPasswordEmpty && password.errors">
+                    <span *ngIf="password.errors.required" class="error-message">Username is required</span>
+                </ng-container>
+            </div>
+        </form>
+        <button (click)="onSubmit()">Submit</button>
+    </div>
+</div>

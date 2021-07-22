@@ -1,8 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
 
-
+html{
+  width: 100vw;
+}
 
 body {
-    margin: 0;
-    padding: 0;
-  }
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  margin: 40px;
+  font-family: "Roboto", sans-serif;
+}
+
+.sizedBox {
+  height: 30px;
+}
+
+.code-box {
+  display: inline;
+  background: rgb(187, 187, 187);
+  padding: 10px 20px;
+  letter-spacing: 1px;
+  border-radius: 5px;
+}
+
+.code-container {
+  margin: 40px 0;
+}
+
+.navbar-container a {
+  margin: 0 20px 0 -7px;
+  text-decoration: none;
+  color: rgb(40, 40, 40);
+  font-size: 30px;
+  padding: 7px;
+  border-radius: 7px;
+}
+
+.navbar-container a:hover {
+  background: rgb(192, 235, 236);
+}

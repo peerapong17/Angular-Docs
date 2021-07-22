@@ -1,0 +1,30 @@
+p {
+    font-size: 20px;
+}
+
+.form-control{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin-bottom: 30px;
+}
+
+.error-message{
+    color: red;
+}
+
+.invalid{
+    border: 2px solid red;
+}
+
+input:hover {
+    outline: none;
+}
+
+.valid{
+    border: 2px solid green;
+}
+
+.boldClass {
+    font-weight: bold;
+ }

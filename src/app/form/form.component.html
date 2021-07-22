@@ -1,7 +1,18 @@
 <div class="container">
+  <app-navbar-section class="navbar-container">
+    <div>
+      <a routerLink="/form" routerLinkActive="active">Home</a>
+    </div>
+    <div>
+      <a routerLink="/formgroup">FormGroup</a>
+    </div>
+  </app-navbar-section>
   <div class="code-container">
     <h2>To use form in angular. you should import FormModule</h2>
-    <div class="code-box">import {{ '{' }} FormsModule {{ '}' }} from '@angular/forms';</div>
+    <div class="code-box">
+      import {{ "{" }} FormsModule {{ "}" }} from '@angular/forms';
+    </div>
+    <div class="sizedBox"></div>
     <p>and then add FormModule into @ngModel imports</p>
   </div>
   <form class="form-container">
