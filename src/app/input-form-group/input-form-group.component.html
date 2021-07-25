@@ -1,11 +1,11 @@
-<!-- <div *ngIf="control">
-  <label [for]="label">{{ label }}: </label>
-  <input [id]="label" type="text" [formControl]="control" />
-  <ng-container *ngIf="control.errors">
-    <p *ngIf="control.errors.minlength">
-      You typed
-      {{ control.errors.minlength.actualLength }} of
-      {{ control.errors.minlength.requiredLength }}
-    </p>
-  </ng-container>
-</div> -->
+<label [for]="label">{{ label }}:</label>
+<input [formControl]="control" [ngClass]="{invalid: isEmpty}" [ngClass]="{invalid: showError()}" autocomplete="off"
+  id="control" type="text" name="control" />
+<ng-container *ngIf="showError()">
+  <span *ngIf="errors.pattern" class="error-message">{{label}} is not valid. Please do not enter special charaters</span>
+  <span *ngIf="errors.minlength" class="error-message">{{label}} should be at least 6 characters</span>
+  <ng-content></ng-content>
+</ng-container>
+<ng-container *ngIf="isEmpty && control.errors">
+  <span *ngIf="errors.required" class="error-message">{{label}} is required</span>
+</ng-container>

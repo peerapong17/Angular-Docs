@@ -24,7 +24,3 @@ input:hover {
 .valid{
     border: 2px solid green;
 }
-
-.boldClass {
-    font-weight: bold;
- }

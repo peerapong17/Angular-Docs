@@ -16,24 +16,17 @@
     <div>
         <form [formGroup]="profileForm">
             <div class="form-control">
-                <label for="username">Username</label>
-                <input [ngClass]="{invalid: isUsernameEmpty}" [ngClass]="{invalid: username.dirty && username.touched && username.errors}" autocomplete="off" id="username" type="text" name="username" formControlName="username" />
-                <ng-container *ngIf="username.dirty && username.touched && username.errors">
-                    <span *ngIf="username.errors.pattern" class="error-message">Email is not valid</span>
-                </ng-container>
-                <ng-container *ngIf="isUsernameEmpty && username.errors">
-                    <span *ngIf="username.errors.required" class="error-message">Username is required</span>
-                </ng-container>
+                <app-input-form-group [isEmpty]="isEmailEmpty" [control]="profileForm.controls.email"
+                    label="Email"></app-input-form-group>
             </div>
             <div class="form-control">
-                <label for="password">Password</label>
-                <input [ngClass]="{invalid: isPasswordEmpty}" [ngClass]="{invalid: password.dirty && password.touched && password.errors}" autocomplete="off" id="password" type="text" name="password" formControlName="password" />
-                <ng-container *ngIf="password.dirty && password.touched && password.errors">
-                    <span *ngIf="password.errors.minlength" class="error-message">Password should be at least 6 characters</span>
-                </ng-container>
-                <ng-container *ngIf="isPasswordEmpty && password.errors">
-                    <span *ngIf="password.errors.required" class="error-message">Username is required</span>
-                </ng-container>
+                <app-input-form-group [isEmpty]="isUsernameEmpty" [control]="profileForm.controls.username"
+                    label="Username">
+                </app-input-form-group>
+            </div>
+            <div class="form-control">
+                <app-input-form-group [isEmpty]="isPasswordEmpty" [control]="profileForm.controls.password"
+                    label="Password"></app-input-form-group>
             </div>
         </form>
         <button (click)="onSubmit()">Submit</button>

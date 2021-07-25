@@ -8,33 +8,55 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class FormGroupComponent implements OnInit {
   profileForm = new FormGroup({
-    username: new FormControl('', [Validators.required, Validators.pattern("[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}")]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.pattern('[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}'),
+    ]),
+    username: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6),
+      Validators.pattern('^[a-zA-Z0-9äöüÄÖÜ]*$'),
+    ]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6),
+    ]),
   });
-  isUsernameEmpty: boolean = false;
+  isEmailEmpty: boolean = false;
   isPasswordEmpty: boolean = false;
-  constructor() {
-  }
+  isUsernameEmpty: boolean = false;
+  constructor() {}
 
   ngOnInit(): void {}
 
-  onSubmit(){
-    if(this.username.valid && this.password.valid){
-      console.log(typeof this.username.value)
+  onSubmit() {
+    if (this.email.valid && this.password.valid && this.username.valid) {
+      console.log("data was sent");
     }
-    if(this.username.value === ''){
-      this.isUsernameEmpty = true
+    if (this.email.value === '') {
+      this.isEmailEmpty = true;
     }
-    if(this.password.value === ''){
-      this.isPasswordEmpty = true
+    if (this.password.value === '') {
+      this.isPasswordEmpty = true;
+    }
+    if (this.password.value === '') {
+      this.isUsernameEmpty = true;
     }
   }
 
-  get username(){
-    return this.profileForm.controls.username
+  get email() {
+    return this.profileForm.controls.email;
+  }
+  get username() {
+    return this.profileForm.controls.username;
   }
 
-  get password(){
-    return this.profileForm.controls.password
+  get password() {
+    return this.profileForm.controls.password;
+  }
+
+  showError(){
+    const {dirty, touched, errors} = this.username
+    return dirty && touched && errors
   }
 }

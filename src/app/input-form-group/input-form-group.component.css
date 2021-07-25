@@ -1,0 +1,16 @@
+
+.error-message{
+    color: red;
+}
+
+.invalid{
+    border: 2px solid red;
+}
+
+input:hover {
+    outline: none;
+}
+
+.valid{
+    border: 2px solid green;
+}
