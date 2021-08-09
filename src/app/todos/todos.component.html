@@ -1,12 +1,14 @@
 <div class="container">
-    <form (ngSubmit)="onAdd()">
-        <input type="text" placeholder="Enter Todo..." [(ngModel)]="task" name="task" autocomplete="off" autofocus>
-        <input type="submit" value="add todo">
+    <form (ngSubmit)="onAdd(todoForm)" #todoForm="ngForm">
+        <input type="text" placeholder="Enter Todo..." name="task" [(ngModel)]="task" autocomplete="off" autofocus required>
+        <span>{{todoForm.getControl("task") | json}}</span>
+        <button class="btn-add-todo" type="submit">Add todo</button>
     </form>
   <ul>
-    <li *ngFor="let todo of todos; let i = index;">
+    <li *ngFor="let todo of todoList | async; let i = index;">
       <h2>{{i + 1}}. {{ todo.task }}</h2>
       <button (click)="onDelete(i)">Remove</button>
+      <button (click)="onEdit(todo.task, i)">Update</button>
     </li>
   </ul>
 </div>

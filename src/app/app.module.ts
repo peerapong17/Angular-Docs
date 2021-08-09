@@ -15,6 +15,12 @@ import { NavbarSectionComponent } from './navbar-section/navbar-section.componen
 import { ApiHomeComponent } from './api-home/api-home.component';
 import { FormGroupComponent } from './form-group/form-group.component';
 import { InputFormGroupComponent } from './input-form-group/input-form-group.component';
+import { ImageComponent } from './image/image.component';
+import { PrimeComponent } from './prime/prime.component';
+import {ButtonModule} from 'primeng/button';
+import {RippleModule} from 'primeng/ripple';
+import {ToastModule} from 'primeng/toast';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 const routes: Routes = [
@@ -43,12 +49,20 @@ const routes: Routes = [
     component: ApiHomeComponent,
   },
   {
+    path: 'image',
+    component: ImageComponent,
+  },
+  {
     path: 'api/example',
     component: APIComponent,
   },
   {
     path: 'user/:id',
     component: UserinfomationComponent,
+  },
+  {
+    path: 'prime',
+    component: PrimeComponent,
   },
 ];
 
@@ -65,14 +79,20 @@ const routes: Routes = [
     NavbarSectionComponent,
     ApiHomeComponent,
     FormGroupComponent,
-    InputFormGroupComponent
+    InputFormGroupComponent,
+    ImageComponent,
+    PrimeComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastModule,
+    ButtonModule,
+    RippleModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

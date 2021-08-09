@@ -1,0 +1,23 @@
+<form [formGroup]="uploadForm" (ngSubmit)="upload()">
+
+    <div class="preview" *ngIf="imgPreview">
+      <img [src]="imgPreview" style="width:400px; height:250px">
+    </div>
+  
+    <div class="form-group">
+      <label for="file">File</label>
+      <input type="file" class="form-control" id="file" (change)="onImageChange($event)">
+      <!-- <div *ngIf="uf.file.touched && uf.file.invalid" class="alert alert-danger">
+        <div *ngIf="uf.file.errors.required">Image file is required.</div>
+      </div> -->
+    </div>
+
+    <div class="container">
+      <div *ngFor="let item of dataList">
+        <img src="{{item.imagePath}}" alt="{{item._id}}" height="270" width="320">
+      </div>
+    </div>
+  
+    <button class="btn btn-success" type="submit">Upload File</button>
+  
+  </form>
