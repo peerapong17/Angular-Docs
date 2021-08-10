@@ -21,6 +21,7 @@ import {ButtonModule} from 'primeng/button';
 import {RippleModule} from 'primeng/ripple';
 import {ToastModule} from 'primeng/toast';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { TodoDirectiveComponent } from './todo-directive/todo-directive.component';
 
 
 const routes: Routes = [
@@ -29,8 +30,12 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'todo',
+    path: 'todo-template',
     component: TodosComponent,
+  },
+  {
+    path: 'todo-directive',
+    component: TodoDirectiveComponent,
   },
   {
     path: 'form',
@@ -82,6 +87,7 @@ const routes: Routes = [
     InputFormGroupComponent,
     ImageComponent,
     PrimeComponent,
+    TodoDirectiveComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,19 +8,22 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class FormGroupComponent implements OnInit {
   profileForm = new FormGroup({
-    email: new FormControl('', [
-      Validators.required,
-      Validators.pattern('[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}'),
-    ]),
-    username: new FormControl('', [
-      Validators.required,
-      Validators.minLength(6),
-      Validators.pattern('^[a-zA-Z0-9äöüÄÖÜ]*$'),
-    ]),
-    password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(6),
-    ]),
+    email: new FormControl('', {
+      validators: [
+        Validators.required,
+        Validators.pattern('[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}'),
+      ],
+    }),
+    username: new FormControl('', {
+      validators: [
+        Validators.required,
+        Validators.minLength(6),
+        Validators.pattern('^[a-zA-Z0-9äöüÄÖÜ]*$'),
+      ],
+    }),
+    password: new FormControl('', {
+      validators: [Validators.required, Validators.minLength(6)],
+    }),
   });
   isEmailEmpty: boolean = false;
   isPasswordEmpty: boolean = false;
@@ -30,8 +33,8 @@ export class FormGroupComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    if (this.email.valid && this.password.valid && this.username.valid) {
-      console.log("data was sent");
+    if (this.email.valid && this.password.valid && this.username?.valid) {
+      console.log('data was sent');
     }
     if (this.email.value === '') {
       this.isEmailEmpty = true;
@@ -48,15 +51,16 @@ export class FormGroupComponent implements OnInit {
     return this.profileForm.controls.email;
   }
   get username() {
-    return this.profileForm.controls.username;
+    return this.profileForm.get("username");
   }
 
   get password() {
     return this.profileForm.controls.password;
   }
 
-  showError(){
-    const {dirty, touched, errors} = this.username
-    return dirty && touched && errors
-  }
+
+  // showError() {
+  //   const { dirty, touched, errors } = this.username;
+  //   return dirty && touched && errors;
+  // }
 }

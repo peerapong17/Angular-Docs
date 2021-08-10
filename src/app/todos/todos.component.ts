@@ -25,13 +25,13 @@ export class TodosComponent implements OnInit, OnDestroy {
     // );
   }
 
-  onEdit(value: string, index:number){
-    this.task = value
-    this.todoSer.editTodo(index)
+  onEdit(value: string, index: number) {
+    this.task = value;
+    this.todoSer.editTodo(index);
   }
 
   onDelete(index: number): void {
-    this.todoSer.deleteTodo(index)
+    this.todoSer.deleteTodo(index);
   }
 
   onAdd(form: NgForm): void {

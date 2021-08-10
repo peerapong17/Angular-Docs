@@ -1,0 +1,25 @@
+<div class="container">
+    <app-navbar-section class="navbar-container">
+        <div>
+            <a routerLink="/todo-template" routerLinkActive="active">Template form</a>
+        </div>
+        <div>
+            <a routerLink="/todo-directive">Directiv form</a>
+        </div>
+    </app-navbar-section>
+    <div class="container">
+        <form (ngSubmit)="onAdd()" [formGroup]="todoForm">
+          <input formControlName="task" type="text" placeholder="Enter Todo..." name="task" autocomplete="off" autofocus
+            required>
+          <button class="btn-add-todo" type="submit">Add todo</button>
+          <span>{{todoForm.get("task")?.errors | json}}</span>
+
+        </form>
+        <ul>
+          <li *ngFor="let todo of todoList | async; let i = index;">
+            <h2>{{i + 1}}. {{ todo.task }}</h2>
+            <button (click)="onDelete(i)">Remove</button>
+            <button (click)="onEdit(i, todo)">Update</button>
+          </li>
+        </ul>
+</div>
